@@ -61,8 +61,102 @@
 ![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-2-1.png)
 
 
+Написание bash-скрипта
+Создал скрипт:
 
+```bash
+nano /opt/start_project.sh
+```
+Добавил следующий код в скрипт:
 
+```bash
+#!/bin/bash
+
+# Обновите систему и установите git
+sudo apt update
+sudo apt install git -y
+
+# Перейдите в каталог /opt
+cd /opt
+
+# Скачайте ваш fork-репозиторий
+git clone https://github.com/Byzgaev-I/shvirtd-example-python.git
+
+# Перейдите в каталог репозитория
+cd shvirtd-example-python
+
+# Создайте файл .env
+cat <<EOF > .env
+MYSQL_ROOT_PASSWORD=your_root_password
+MYSQL_DATABASE=example
+MYSQL_USER=your_db_user
+MYSQL_PASSWORD=your_db_password
+EOF
+
+# Создайте файл Dockerfile.python
+cat <<EOF > Dockerfile.python
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]
+EOF
+
+# Создайте файл compose.yaml
+cat <<EOF > compose.yaml
+version: "3"
+services:
+  proxy:
+    image: nginx:latest
+    ports:
+      - "5000:80"
+    networks:
+      backend:
+        ipv4_address: 172.20.0.2
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    restart: always
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: \${MYSQL_DATABASE}
+      MYSQL_USER: \${MYSQL_USER}
+      MYSQL_PASSWORD: \${MYSQL_PASSWORD}
+
+  db:
+    image: mysql:8
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: \${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: \${MYSQL_DATABASE}
+      MYSQL_USER: \${MYSQL_USER}
+      MYSQL_PASSWORD: \${MYSQL_PASSWORD}
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+EOF
+
+# Запуск Docker Compose
+sudo docker-compose up -d
+```
 
 
 
