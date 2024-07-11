@@ -72,20 +72,20 @@ nano /opt/start_project.sh
 ```bash
 #!/bin/bash
 
-# Обновите систему и установите git
+# Обновил систему и установил git
 sudo apt update
 sudo apt install git -y
 
-# Перейдите в каталог /opt
+# Переход в каталог /opt
 cd /opt
 
-# Скачайте ваш fork-репозиторий
+# Скачать наш fork-репозиторий
 git clone https://github.com/Byzgaev-I/shvirtd-example-python.git
 
-# Перейдите в каталог репозитория
+# Перешел в каталог репозитория
 cd shvirtd-example-python
 
-# Создайте файл .env
+# Создал файл .env
 cat <<EOF > .env
 MYSQL_ROOT_PASSWORD=your_root_password
 MYSQL_DATABASE=example
@@ -93,7 +93,7 @@ MYSQL_USER=your_db_user
 MYSQL_PASSWORD=your_db_password
 EOF
 
-# Создайте файл Dockerfile.python
+# Создал файл Dockerfile.python
 cat <<EOF > Dockerfile.python
 FROM python:3.9-slim
 
@@ -108,7 +108,7 @@ COPY . .
 CMD ["python", "app.py"]
 EOF
 
-# Создайте файл compose.yaml
+# Создал файл compose.yaml
 cat <<EOF > compose.yaml
 version: "3"
 services:
@@ -156,6 +156,7 @@ EOF
 
 # Запуск Docker Compose
 sudo docker-compose up -d
+
 ```
 
 
