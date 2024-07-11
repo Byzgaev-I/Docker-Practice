@@ -159,10 +159,32 @@ sudo docker-compose up -d
 
 ```
 
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-3.png)
 
 
+4) Проверил http подключений, например(или аналогичный): https://check-host.net/check-http и запустите проверку вашего сервиса http://<внешний_IP-адрес_вашей_ВМ>:5000.
+
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-4.png)
+
+6) В качестве ответа повторил sql-запрос и прикладываю скриншот с данного сервера, bash-скрипт.
+
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-6.png)
 
 
+----
+
+### Задание 6
+
+Скачайте docker образ hashicorp/terraform:latest и скопируйте бинарный файл /bin/terraform на свою локальную машину, используя dive и docker save. Предоставьте скриншоты действий.
+
+6.1 Добейтесь аналогичного результата, используя docker cp.  
+Предоставьте скриншоты действий.  
+
+
+### Выполнения задания 6
+
+
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/6-1.png) 
 
 
 
