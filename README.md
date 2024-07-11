@@ -187,6 +187,9 @@ sudo docker-compose up -d
 ![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/6-1.png) 
 
 
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/6-1-1.png)
+
+
 
 
 
