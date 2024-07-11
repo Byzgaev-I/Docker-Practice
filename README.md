@@ -168,7 +168,7 @@ sudo docker-compose up -d
 
 6) В качестве ответа повторил sql-запрос и прикладываю скриншот с данного сервера, bash-скрипт.
 
-![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-6.png)
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-6правка.png)
 
 
 ----
