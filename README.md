@@ -40,6 +40,27 @@
 ![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/3-2.png) 
 
 
+----
+
+### Задание 4
+
+1) Запустите в Yandex Cloud ВМ (вам хватит 2 Гб Ram).
+2) Подключитесь к Вм по ssh и установите docker.
+3) Напишите bash-скрипт, который скачает ваш fork-репозиторий в каталог /opt и запустит проект целиком.
+4) Зайдите на сайт проверки http подключений, например(или аналогичный): https://check-host.net/check-http и запустите проверку вашего сервиса http://<внешний_IP-адрес_вашей_ВМ>:8090. Таким образом трафик будет направлен в ingress-proxy.
+5) (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения docker ps -a
+6) В качестве ответа повторите sql-запрос и приложите скриншот с данного сервера, bash-скрипт и ссылку на fork-репозиторий.
+
+### Выполнения задания 4
+
+1) Запустил в Yandex Cloud ВМ.
+2) Подключитесь к Вм по ssh и установил docker.
+   
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-2.png)
+
+![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/4-2-1.png)
+
+
 
 
 
