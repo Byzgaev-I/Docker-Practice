@@ -12,7 +12,7 @@
 
 ### Выполнения задания 1
 
-1) Сделайте в своем github пространстве fork репозитория https://github.com/netology-code/shvirtd-example-python/blob/main/README.md.  
+1) Сделайте в своем github пространстве fork репозитория [https://github.com/Byzgaev-I/shvirtd-example-python ] 
 2) Создайте файл с именем Dockerfile.python для сборки данного проекта. Используйте базовый образ python:3.9-slim. Протестируйте корректность сборки. Не забудьте dockerignore.
 
 ![image.jpg](https://github.com/Byzgaev-I/Docker-Practice/blob/main/1-1.png)
